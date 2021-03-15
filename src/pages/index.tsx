@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { BalanceCard } from '../components/BalanceCard';
+import { Button } from '../components/Button';
 import { IncomesAndExpenses } from '../components/IncomesAndExpenses';
 import { Listing } from '../components/Listing';
 import { MonthBalanceCard } from '../components/MonthBalanceCard';
@@ -21,8 +22,14 @@ export default function Home() {
         <section className={styles.incomesAndExpenses}>
           <IncomesAndExpenses/>
           <hr/>
-          <Listing/>
         </section>
+        <section className={styles.transactions}>
+          <Listing/>
+          <Listing/>
+          <hr/>
+        </section>
+        <Button/>
+        <Button/>
       </main>
 
        

@@ -1,0 +1,36 @@
+.buttonContainer {
+    height: 20vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 4.2rem;
+}
+
+.buttonContainer .button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 20rem;
+    padding: 1.8rem;
+    height: 1.4rem;
+
+    border: none;
+    background: var(--primary);
+    color: var(--lightBase);
+
+    transition: opacity 0.2s;
+
+}
+
+.buttonContainer .button:hover {
+    opacity: 0.8;
+}
+
+.buttonContainer .button strong {
+    font-family: 'Montserrat';
+    font-weight: 700;
+}
