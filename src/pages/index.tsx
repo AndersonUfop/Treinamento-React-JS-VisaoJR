@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { BalanceCard } from '../components/BalanceCard';
 import { IncomesAndExpenses } from '../components/IncomesAndExpenses';
+import { Listing } from '../components/Listing';
 import { MonthBalanceCard } from '../components/MonthBalanceCard';
 import { SideBar } from '../components/Sidebar';
 
@@ -20,6 +21,7 @@ export default function Home() {
         <section className={styles.incomesAndExpenses}>
           <IncomesAndExpenses/>
           <hr/>
+          <Listing/>
         </section>
       </main>
 
