@@ -1,18 +1,30 @@
 import styles from '../styles/components/Listing.module.css';
 
-export function Listing() {
+interface ListingProps {
+    date: string;
+    title: string;
+    description: string
+    price: string;
+}
+
+export function Listing({
+    date,
+    title,
+    description,
+    price
+}: ListingProps) {
     return (
         <div className={styles.containerTransactions}>
             <div className={styles.date}>
-                <small>20/04/2021</small>
+                <small>{date}</small>
             </div>
             <div className={styles.transaction}>
                 <div className={styles.description}>
-                    <strong>Almoço com a família</strong>
-                    <small>Despesas | Alimentação</small>
+                    <strong>{title}</strong>
+                    <small>{description}</small>
                 </div>
                 <div className={styles.price}>
-                    <strong>R$ 25,00</strong>
+                    <strong>R$ {price}</strong>
                 </div>
             </div>
         </div>

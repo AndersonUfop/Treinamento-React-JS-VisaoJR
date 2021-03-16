@@ -1,16 +1,19 @@
 import styles from '../styles/components/IncomesAndExpenses.module.css';
 
-export function IncomesAndExpenses() {
+interface IncomesAndExpensesProps {
+  name: string;
+  price: string;
+}
+
+export function IncomesAndExpenses({
+  name,
+  price
+}: IncomesAndExpensesProps) {
     return (
         <div className={styles.incomesAndExpensesContainer}>
           <div className={styles.incomes}>
-            <small>Receitas:</small>
-            <strong>R$ 2.800,00</strong>
-          </div>
-
-          <div className={styles.expanses}>
-            <small>Despesas:</small>
-            <strong>R$ 2.800,00</strong>
+            <small>{name}</small>
+            <strong>R$ {price}</strong>
           </div>
           
         </div>

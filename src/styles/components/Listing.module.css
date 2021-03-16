@@ -1,10 +1,10 @@
 .containerTransactions {
-    padding: 2rem;
     display: flex;
     flex-direction: column;
+    margin-top: 1.2rem;
     
-    margin-top: 4.2rem;
 }
+
 
 @media (min-width: 700px) {
     .containerTransactions {
@@ -54,7 +54,6 @@
 }
 
 .containerTransactions .transaction:hover{
-    cursor: pointer;
     color: #1263E6;
 }
 

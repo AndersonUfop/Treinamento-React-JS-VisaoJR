@@ -1,12 +1,24 @@
 import styles from '../styles/components/Button.module.css';
 
-import { BiTrendingUp, BiTrendingDown} from 'react-icons/bi';
-export function Button() {
+
+import { ReactNode } from 'react';
+
+interface ButtonProps {
+    children: ReactNode;
+    name: string;
+    color: string;
+}
+
+export function Button({
+    name,
+    children,
+    color
+}: ButtonProps) {
     return (
         <div className={styles.buttonContainer}>
-            <button className={styles.button}>
-                <BiTrendingUp size={32}/>
-                <strong>CADASTRAR RECEITA</strong> 
+            <button className={styles.button} style={{background: `${color}`}}>
+                {children}
+                <strong>{name}</strong> 
             </button>
         </div>
     );
