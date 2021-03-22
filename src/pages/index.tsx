@@ -58,7 +58,7 @@ export default function Home() {
         <hr/>
         <section className={styles.footer}>
         <a href="recip">
-          <Button name="Cadastrar receita" color="#263C9E">
+          <Button name="CADASTRAR RECEITA" color="#263C9E">
             <BiTrendingUp size={32}/>
           </Button>
         </a>

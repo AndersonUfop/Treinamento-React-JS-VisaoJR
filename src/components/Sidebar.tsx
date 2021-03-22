@@ -7,7 +7,9 @@ export function SideBar() {
     return (
         <div className={styles.sidebarContainer}>
             <FaUserAlt className={styles.userIcon} size={24}/>
-            <AiOutlineClose className={styles.closeIcon} size={24}/>
+            <a href="login">
+                <AiOutlineClose className={styles.closeIcon} size={24}/>
+            </a>
         </div>
     );
 }

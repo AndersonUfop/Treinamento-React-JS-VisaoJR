@@ -25,11 +25,7 @@
 
 }
 
-@media (min-width: 700px) {
-    .buttonContainer .button {
-        margin-left: 4rem;
-    }
-}
+
 
 .buttonContainer .button:hover {
     opacity: 0.8;
