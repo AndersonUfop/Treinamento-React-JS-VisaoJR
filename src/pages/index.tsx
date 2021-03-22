@@ -1,4 +1,5 @@
 import Head from 'next/head';
+
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
 import { IncomesAndExpenses } from '../components/IncomesAndExpenses';
@@ -56,12 +57,17 @@ export default function Home() {
         </section>
         <hr/>
         <section className={styles.footer}>
+        <a href="recip">
           <Button name="Cadastrar receita" color="#263C9E">
             <BiTrendingUp size={32}/>
           </Button>
+        </a>
+
+        <a href="expenses">
           <Button name="CADASTRAR DESPESA" color="#3E4858">
             <BiTrendingDown size={32}/>
           </Button>
+        </a>
         </section>
         
       </main>

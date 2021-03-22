@@ -4,7 +4,7 @@ import styles from '../styles/components/Button.module.css';
 import { ReactNode } from 'react';
 
 interface ButtonProps {
-    children: ReactNode;
+    children?: ReactNode;
     name: string;
     color: string;
 }
