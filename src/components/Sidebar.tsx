@@ -1,15 +1,15 @@
-import styles from '../styles/components/Sidebar.module.css';
+import { SideBarContainer } from '../styles/components/Sidebar';
 
 import { FaUserAlt } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
 
 export function SideBar() {
     return (
-        <div className={styles.sidebarContainer}>
-            <FaUserAlt className={styles.userIcon} size={24}/>
+        <SideBarContainer>
+            <FaUserAlt className="userIcon" size={24}/>
             <a href="login">
-                <AiOutlineClose className={styles.closeIcon} size={24}/>
+                <AiOutlineClose className="closeIcon" size={24}/>
             </a>
-        </div>
+        </SideBarContainer>
     );
 }

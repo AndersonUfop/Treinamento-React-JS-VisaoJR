@@ -1,4 +1,5 @@
-import styles from '../styles/components/IncomesAndExpenses.module.css';
+import { Container, Transaction } from '../styles/components/IcomesAndExpenses';
+
 
 interface IncomesAndExpensesProps {
   name: string;
@@ -10,12 +11,12 @@ export function IncomesAndExpenses({
   price
 }: IncomesAndExpensesProps) {
     return (
-        <div className={styles.incomesAndExpensesContainer}>
-          <div className={styles.incomes}>
+        <Container>
+          <Transaction>
             <small>{name}</small>
             <strong>R$ {price}</strong>
-          </div>
+          </Transaction>
           
-        </div>
+        </Container>
     );
 }

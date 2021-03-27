@@ -1,13 +1,13 @@
 import { BiArrowBack } from 'react-icons/bi';
 
-import styles from '../styles/components/BackPage.module.css';
+import { Container } from '../styles/components/BackPage';
 
 export default function BackPage() {
     return (
-        <div className={styles.container}>
+        <Container>
             <a href="/">
                 <BiArrowBack size={32} color="#FFF" />
             </a> 
-        </div>
+        </Container>
     );
 }

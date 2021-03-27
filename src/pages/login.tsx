@@ -1,37 +1,44 @@
 import Head from 'next/head';
+import { useRef } from 'react';
 
 import { Button } from '../components/Button';
-import { Input } from '../components/Input';
 import { InputWithoutIcon } from '../components/InputWithoutIcon';
-import styles from '../styles/pages/Login.module.css';
+
+import { FormHandles } from '@unform/core';
+
+import { Container, Form } from '../styles/pages/Login';
 
 export default function login() {
+    const formRef = useRef<FormHandles>(null);
+
     return (
-        <main className={styles.container}>
+        <Container>
             <Head>
                 <title>Login</title>
             </Head>
             
-            <div className={styles.logo}>
+            <div className="logo">
                 <img src="/assets/logo.png"/>
             </div>
             
-            <form  action="/" className={styles.formContainer}>
+            <Form ref={formRef} onSubmit={() => {}}>
                 <InputWithoutIcon 
                     name="email" 
                     title="E-mail"
                     type="email"
+                    placeholder="Digite seu e-mail"
                 />
                 <InputWithoutIcon 
                     name="password" 
                     title="Senha"
                     type="password"
+                    placeholder="Digite sua senha"
                 />
                 
                     <Button name="ENTRAR" color="#263C9E"/>
                 
 
-                <div className={styles.footer}>
+                <div className="footer">
                     <a href="#">
                         <span>Esqueci minha senha</span>
                     </a>
@@ -41,10 +48,10 @@ export default function login() {
                     </a>
                     
                 </div>
-            </form>
+            </Form>
             
 
-        </main>
+        </Container>
        
     );
 }

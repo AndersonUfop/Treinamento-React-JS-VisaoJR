@@ -8,16 +8,16 @@ import { SideBar } from '../components/Sidebar';
 
 import { BiTrendingUp, BiTrendingDown} from 'react-icons/bi';
 
-import styles from '../styles/pages/Home.module.css';
+import { Container, Balance, Transactions, Footer } from '../styles/pages/Home';
 
 export default function Home() {
   return (
-      <main className={styles.container}>
+      <Container>
         <Head>
           <title>Dashboard | MyFinances</title>
         </Head>
         <SideBar/>
-        <section className={styles.balance}>
+        <Balance>
           <Card 
             title="SALDO ATUAL" 
             value="120.000,00" 
@@ -30,15 +30,17 @@ export default function Home() {
             color="#ACF4A0"
             borderColor="#15EF38"  
           />
-        </section>
-        <section className={styles.incomesAndExpenses}>
+        </Balance>
+
+        <section className="incomesAndExpenses">
           <IncomesAndExpenses name="Receitas:" price="2.800,00"/>
           <IncomesAndExpenses name="Despesas:" price="10.000,00"/>
           <hr/>
         </section>
-        <section className={styles.transactions}>
-          <h2 className={styles.title}>
-            MARÇO
+
+        <Transactions>
+          <h2>
+            MARÇO 2021
           </h2>
           <Listing
             date="15/03/2021"
@@ -54,9 +56,9 @@ export default function Home() {
             price="5.000,00"
           />
 
-        </section>
+        </Transactions>
         <hr/>
-        <section className={styles.footer}>
+        <Footer>
         <a href="recip">
           <Button name="CADASTRAR RECEITA" color="#263C9E">
             <BiTrendingUp size={32}/>
@@ -68,9 +70,9 @@ export default function Home() {
             <BiTrendingDown size={32}/>
           </Button>
         </a>
-        </section>
+        </Footer>
         
-      </main>
+      </Container>
 
        
   )

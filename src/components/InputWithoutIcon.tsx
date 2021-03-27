@@ -1,4 +1,4 @@
-import styles from '../styles/components/InputWithoutIcon.module.css';
+import { Container, Legend, InputContent} from '../styles/components/InputWithoutIcon';
 
 interface InputProps {
     name: string;
@@ -16,20 +16,19 @@ export function InputWithoutIcon({
     placeholder,
 }: InputProps ) {
     return (
-       <div className={styles.inputContainer}>
-           <label className={styles.legend}>{title}</label>
-           <div className={styles.inputContent}>
+       <Container>
+           <Legend>{title}</Legend>
+           <InputContent>
            
            <input 
-            className={styles.inputText} 
             type={type} 
             name={name}
             placeholder={placeholder}
             />
             
-           </div>
+           </InputContent>
            
            
-        </div>
+        </Container>
     )
 }

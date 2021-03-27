@@ -1,4 +1,6 @@
-.sidebarContainer {
+import styled from 'styled-components';
+
+export const SideBarContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -6,9 +8,8 @@
     height: 3.5rem;
     background: var(--darkBase);
     padding: 2rem;
-}
 
-.userIcon, .closeIcon {
+    .userIcon, .closeIcon {
     color: #FFF;
     transition: color 0.2s;
 }
@@ -18,5 +19,12 @@
     opacity: 0.8;
     cursor: pointer;
 }
+
+`;
+
+
+
+
+
 
 

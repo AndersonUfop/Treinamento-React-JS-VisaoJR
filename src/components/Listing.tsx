@@ -1,4 +1,4 @@
-import styles from '../styles/components/Listing.module.css';
+import { Container } from '../styles/components/Listing';
 
 interface ListingProps {
     date: string;
@@ -14,19 +14,19 @@ export function Listing({
     price
 }: ListingProps) {
     return (
-        <div className={styles.containerTransactions}>
-            <div className={styles.date}>
+        <Container>
+            <div className="date">
                 <small>{date}</small>
             </div>
-            <div className={styles.transaction}>
-                <div className={styles.description}>
+            <div className="transaction">
+                <div className="description">
                     <strong>{title}</strong>
                     <small>{description}</small>
                 </div>
-                <div className={styles.price}>
+                <div className="price">
                     <strong>R$ {price}</strong>
                 </div>
             </div>
-        </div>
+        </Container>
     );
 }

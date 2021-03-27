@@ -1,4 +1,4 @@
-import styles from '../styles/components/Card.module.css';
+import { CardContainer } from '../styles/components/Card';
 
 interface CardProps {
     title: string;
@@ -15,21 +15,16 @@ export function Card({
     
 }: CardProps) {
 
-   /*  const style = {
-        color: {color},
-        fontSize: 200
-      }; */
-
     return (
         
 
 
-        <div className={styles.cardContainer} style={{
+        <CardContainer style={{
             background: `${color}`, borderColor: `${borderColor}`
         }}
         >
             <small>{title}</small>
             <strong>R$ {value}</strong>
-        </div>
+        </CardContainer>
     );
 }

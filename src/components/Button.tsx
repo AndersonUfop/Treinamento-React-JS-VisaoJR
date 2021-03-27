@@ -1,7 +1,6 @@
-import styles from '../styles/components/Button.module.css';
-
-
 import { ReactNode } from 'react';
+
+import { ButtonContainer } from '../styles/components/Button';
 
 interface ButtonProps {
     children?: ReactNode;
@@ -15,11 +14,11 @@ export function Button({
     color
 }: ButtonProps) {
     return (
-        <div className={styles.buttonContainer}>
-            <button className={styles.button} style={{background: `${color}`}}>
+        <ButtonContainer>
+            <button className="button" style={{background: `${color}`}}>
                 {children}
                 <strong>{name}</strong> 
             </button>
-        </div>
+        </ButtonContainer>
     );
 }

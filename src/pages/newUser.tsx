@@ -1,21 +1,27 @@
 import Head from 'next/head';
+import { useRef } from 'react';
 
 import React from 'react';
 import { BiArrowBack } from 'react-icons/bi';
 import { Button } from '../components/Button';
 import { InputWithoutIcon } from '../components/InputWithoutIcon';
-import styles from '../styles/pages/newUser.module.css';
+
+import { FormHandles } from '@unform/core';
+
+import { Container, Form } from '../styles/pages/newUser';
 
 export default function newUser() {
+    const formRef = useRef<FormHandles>(null);
+
     return (
-        <main className={styles.container}>
+        <Container>
             <Head>
                 <title>Novo Usuário</title>
             </Head>
             
             <h1>Novo Usuário</h1>
 
-            <form className={styles.formContainer}>
+            <Form ref={formRef} onSubmit={() => {}}>
                 <InputWithoutIcon 
                     name="name" 
                     title="Nome"
@@ -46,17 +52,17 @@ export default function newUser() {
                 
                 <Button name="SALVAR" color="#263C9E"/>
 
-                <div className={styles.footer}>
+                <div className="footer">
                     <a href="login">
-                        <span> 
-                        <BiArrowBack/> Voltar</span>
+                        <BiArrowBack size={12}/> 
+                        <span> Voltar</span>
                     </a>
                 </div>
 
-            </form>
+            </Form>
             
 
-        </main>
+        </Container>
        
     );
 }

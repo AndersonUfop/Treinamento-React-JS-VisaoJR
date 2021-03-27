@@ -10,17 +10,21 @@ import DatePickerInput from '../components/DatePickerInput';
 import { InputWithoutIcon } from '../components/InputWithoutIcon';
 import BackPage from '../components/BackPage';
 
-import styles from '../styles/pages/Expenses.module.css';
+import { Container, Form, ButtonSave } from '../styles/pages/Expenses';
+import { useRef } from 'react';
+import { FormHandles } from '@unform/core';
 
 export default function Expenses() {
+    const formRef = useRef<FormHandles>(null);
+
     return (
-        <main className={styles.container}>
+        <Container>
             <Head>
                 <title>Cadastrar Despesa | MyFinances</title>  
             </Head>
             <BackPage/>
             
-            <form className={styles.formContainer}>
+            <Form ref={formRef} onSubmit={() => {}}>
                 <h1>Cadastrar Despesa</h1>
                 <Input 
                     name="Valor" 
@@ -42,19 +46,15 @@ export default function Expenses() {
                 <Toggle text="Pago?"/>
                 <Toggle text="Custo fixo?"/>
 
-                <div className={styles.buttonSave}>
+                <ButtonSave>
                     <button type="submit">
                         Salvar
                     </button>
-                </div>
+                </ButtonSave>
                 
+            </Form>
 
-
-
-            </form>
-            
-            
-        </main>
+        </Container>
     );
     
 }

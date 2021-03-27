@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { DragSwitch } from 'react-dragswitch';
 import 'react-dragswitch/dist/index.css';
 
-import styles from '../styles/components/Toggle.module.css';
+import { Container, Label } from '../styles/components/Toggle';
 
 interface ToogleProps {
     text: string;
@@ -15,18 +15,18 @@ export default function Toggle({
     const [checked, setChecked ] = useState(false);
 
     return (
-        <div className={styles.toggleContainer}>
-            <label className={styles.labelContainer}>{text}</label>
+        <Container>
+            <Label>{text}</Label>
             <DragSwitch
                 
                 onColor="#1263E6"
-                className={styles.toogle} 
+                className="toogle" 
                 checked={checked} 
                 onChange={(e) => {
                     setChecked(e)
                 }}
             />
-        </div>
+        </Container>
         
     );
 }

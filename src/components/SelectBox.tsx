@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 
-import styles from '../styles/components/SelectBox.module.css';
+import { Container, Label } from '../styles/components/SelectBox';
 
 const options = [
     { value: "Alimentação", label: "Alimentação"},
@@ -15,14 +15,14 @@ const options = [
 
 export default function SelectBox() {
     return (
-        <div className={styles.selectContainer}>
-            <label className={styles.labelContainer}>Categoria</label>
+        <Container>
+            <Label>Categoria</Label>
             <Select  
-                className={styles.selectBox} 
+                className="select" 
                 options={options} 
                 placeholder="Selecione uma opção"
             />
-        </div>  
+        </Container>  
         
     )
 }
