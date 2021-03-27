@@ -22,11 +22,18 @@ export default function Expenses() {
             
             <form className={styles.formContainer}>
                 <h1>Cadastrar Despesa</h1>
-                <Input name="Valor" title="Valor">
+                <Input 
+                    name="Valor" 
+                    type="text"
+                    title="Valor"
+                >
                     <MdAttachMoney size={24}/>
                 </Input>
 
-                <InputWithoutIcon name="description" title="Descrição"/>
+                <InputWithoutIcon 
+                    name="description" 
+                    type="text"
+                    title="Descrição"/>
 
                 <DatePickerInput/>
 

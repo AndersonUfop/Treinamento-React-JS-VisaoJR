@@ -2,7 +2,8 @@ interface InputProps {
     name: string;
     title: string;
     children: ReactNode;
-    type;
+    type: string;
+    placeholder?: string;
 }
 
 
@@ -14,6 +15,7 @@ export function Input({
     name,
     title,
     type,
+    placeholder,
     children
 }: InputProps ) {
     return (
@@ -21,7 +23,12 @@ export function Input({
            <label className={styles.legend}>{title}</label>
            <div className={styles.inputContent}>
            {children}
-           <input className={styles.inputText} type={type} name={name}/>
+           <input 
+            className={styles.inputText} 
+            type={type} 
+            name={name}
+            placeholder={placeholder}
+            />
             
            </div>
            
