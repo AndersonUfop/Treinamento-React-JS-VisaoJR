@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useRef } from 'react';
+import { ChangeEvent, useRef, useState, FormEvent } from 'react';
 
 import React from 'react';
 import { BiArrowBack } from 'react-icons/bi';
@@ -13,6 +13,40 @@ import { Container, Form } from '../styles/pages/newUser';
 export default function newUser() {
     const formRef = useRef<FormHandles>(null);
 
+    const [ formData, setFormData ] = useState({
+        name: '',
+        email: '',
+        password: '',
+    })
+
+    function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
+        const { name, value } = event.target;
+
+        setFormData({ ...formData, [name]: value });
+
+    }
+
+    async function handleSubmit(event: FormEvent) {
+       event.preventDefault;
+       
+       const { name, email, password } = formData;
+       const data = new FormData();
+
+       data.append('name', name);
+       data.append('email', email);
+       data.append('password', password);
+
+       const Newuser = [name, email, password];
+
+       localStorage.setItem('NewUser', JSON.stringify(Newuser));
+
+       alert('Usuário cadastrado com sucesso');
+
+       window.location.href = '/login';
+
+
+    }
+
     return (
         <Container>
             <Head>
@@ -21,12 +55,14 @@ export default function newUser() {
             
             <h1>Novo Usuário</h1>
 
-            <Form ref={formRef} onSubmit={() => {}}>
+            <Form ref={formRef} onSubmit={handleSubmit}>
                 <InputWithoutIcon 
                     name="name" 
                     title="Nome"
                     type="text"
                     placeholder="Digite seu nome"
+                    onChange={handleInputChange}
+                    
                     
                 />
                 <InputWithoutIcon 
@@ -34,6 +70,7 @@ export default function newUser() {
                     title="E-mail"
                     type="email"
                     placeholder="Digite seu e-mail"
+                    onChange={handleInputChange}
                 />
 
                 <InputWithoutIcon 
@@ -41,6 +78,7 @@ export default function newUser() {
                     title="Senha"
                     type="password"
                     placeholder="Digite uma senha"
+                    onChange={handleInputChange}
                 />
 
                 <InputWithoutIcon 
@@ -48,9 +86,11 @@ export default function newUser() {
                     title="Senha"
                     type="password"
                     placeholder="Confirme sua senha"
+                    onChange={handleInputChange}
                 />
                 
-                <Button name="SALVAR" color="#263C9E"/>
+                <Button name="SALVAR" type="submit" color="#263C9E"/>
+                
 
                 <div className="footer">
                     <a href="login">

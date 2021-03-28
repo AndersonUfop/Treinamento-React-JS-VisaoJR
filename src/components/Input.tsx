@@ -4,10 +4,11 @@ interface InputProps {
     children: ReactNode;
     type: string;
     placeholder?: string;
+    onChange: ChangeEventHandler<HTMLInputElement>;
 }
 
 import {MdAttachMoney} from 'react-icons/md';
-import { ReactNode } from 'react';
+import { ChangeEventHandler, ReactNode } from 'react';
 
 
 import { Container, Legend, InputContent } from '../styles/components/Input';
@@ -17,6 +18,7 @@ export function Input({
     title,
     type,
     placeholder,
+    onChange,
     children
 }: InputProps ) {
     return (
@@ -28,6 +30,7 @@ export function Input({
             type={type} 
             name={name}
             placeholder={placeholder}
+            onChange={onChange}
             />
             
            </InputContent>

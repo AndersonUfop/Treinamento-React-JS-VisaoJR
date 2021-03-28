@@ -1,3 +1,4 @@
+import { ChangeEventHandler } from 'react';
 import { Container, Legend, InputContent} from '../styles/components/InputWithoutIcon';
 
 interface InputProps {
@@ -5,6 +6,7 @@ interface InputProps {
     title: string;
     type: string;
     placeholder?: string;
+    onChange: ChangeEventHandler<HTMLInputElement>
     
 }
 
@@ -14,6 +16,7 @@ export function InputWithoutIcon({
     title,
     type,
     placeholder,
+    onChange,
 }: InputProps ) {
     return (
        <Container>
@@ -24,6 +27,7 @@ export function InputWithoutIcon({
             type={type} 
             name={name}
             placeholder={placeholder}
+            onChange={onChange}
             />
             
            </InputContent>
