@@ -4,7 +4,7 @@ interface ListingProps {
     date: string;
     title: string;
     description: string
-    price: string;
+    price: Number;
 }
 
 export function Listing({
@@ -24,7 +24,7 @@ export function Listing({
                     <small>{description}</small>
                 </div>
                 <div className="price">
-                    <strong>R$ {price}</strong>
+                    <strong>{price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</strong>
                 </div>
             </div>
         </Container>

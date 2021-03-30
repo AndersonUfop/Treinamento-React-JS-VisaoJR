@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
 
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
@@ -10,7 +11,28 @@ import { BiTrendingUp, BiTrendingDown} from 'react-icons/bi';
 
 import { Container, Balance, Transactions, Footer } from '../styles/pages/Home';
 
+interface IIncomes {
+  id: string;
+  price: Number;
+  description: string;
+  date: string;
+  category: string;
+  type: string;
+}
+
+
 export default function Home() {
+  const [ incomesAndExpenses, setIncomesAndExpenses ] = useState<IIncomes[]>([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3333/IncomesAndExpenses').then(response => {
+      response.json().then(data => {
+        setIncomesAndExpenses(data);
+      })
+    })
+  });
+
+
   return (
       <Container>
         <Head>
@@ -40,21 +62,30 @@ export default function Home() {
 
         <Transactions>
           <h2>
-            MARÇO 2021
+            ABRIL 2021
           </h2>
-          <Listing
-            date="15/03/2021"
-            title="Almoço com a família"
-            description="Despesas | Alimentação"
-            price="25,00"
+          {incomesAndExpenses.map(incomesAndExpenses => {
+            return (
+              <Listing
+              key={incomesAndExpenses.id}
+              date={incomesAndExpenses.date}
+              title={incomesAndExpenses.description}
+              description={incomesAndExpenses.category}
+              price={incomesAndExpenses.price}
           />
+            )
+          })}
 
-          <Listing
+
+          
+          
+
+          {/* <Listing
             date="19/03/2021"
             title="Recebimento de salário"
             description="Receitas | Salário"
             price="5.000,00"
-          />
+          /> */}
 
         </Transactions>
         <hr/>

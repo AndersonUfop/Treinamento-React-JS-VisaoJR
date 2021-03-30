@@ -28,6 +28,7 @@ export default function newUser() {
 
     async function handleSubmit(event: FormEvent) {
        event.preventDefault;
+       let users = JSON.parse(localStorage.getItem('users')) || []
        
        const { name, email, password } = formData;
        const data = new FormData();
@@ -37,12 +38,20 @@ export default function newUser() {
        data.append('password', password);
 
        const Newuser = [name, email, password];
-
-       localStorage.setItem('NewUser', JSON.stringify(Newuser));
-
+       users.push(Newuser);
+       localStorage.setItem('users', JSON.stringify(users));
        alert('Usuário cadastrado com sucesso');
+       /* window.location.href = '/login'; */
 
-       window.location.href = '/login';
+       // Retornar itens do localStorage
+       const items = JSON.parse(localStorage.getItem('users'));
+       console.log(items);
+
+       // Buscar item no localStorage
+       for (let i = 0; i < localStorage.length; i++) {
+            console.log(localStorage.key(i));
+       }
+       
 
 
     }

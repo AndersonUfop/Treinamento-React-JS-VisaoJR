@@ -1,0 +1,16 @@
+{
+  "IncomesAndExpenses": [
+    { "id": "1", "price": 20.00, "description": "Recebimento de empréstimo", "date": "15/04/2021", 
+      "category": "outros", "type": "Receitas", "received": true, "fixed_revenue": true },
+    
+      { "id": "2", "price": 2000.00, "description": "Recebimento do salário", "date": "12/04/2021", 
+        "category": "Salário", "type": "Receitas", "received": true, "fixed_revenue": true },
+
+    { "id": "3", "price": 200.00, "description": "Gastos de viagem", "date": "10/04/2021", 
+      "category": "Lazer", "type": "Despesas", "paid": true, "fixed_cost": false },
+    
+      { "id": "4", "price": 60.00, "description": "Compra de camiseta", "date": "16/04/2021", 
+        "category": "Compras", "type": "Despesas", "paid": true, "fixed_cost": false }
+
+  ]
+}
